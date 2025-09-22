@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Tarefas</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>Lista de Tarefas</h1>
+
+   
+    <div class="nova-tarefa">
+      <input type="text" id="novaTarefa" placeholder="Digite uma nova tarefa">
+      <button onclick="adicionarTarefa()">Adicionar</button>
+    </div>
+
+    
+    <ul id="lista">
+      <li>
+        <input type="checkbox" onclick="toggleConcluida(this)">
+        <span>Estudar HTML e CSS</span>
+        <button onclick="editarTarefa(this)">Editar</button>
+        <button onclick="removerTarefa(this)">Excluir</button>
+      </li>
+    </ul>
+  </div>
+
+  <script>
+    function adicionarTarefa() {
+      const input = document.getElementById("novaTarefa");
+      const texto = input.value.trim();
+      if (texto === "") return;
+
+      const ul = document.getElementById("lista");
+      const li = document.createElement("li");
+
+      li.innerHTML = `
+        <input type="checkbox" onclick="toggleConcluida(this)">
+        <span>${texto}</span>
+        <button onclick="editarTarefa(this)">Editar</button>
+        <button onclick="removerTarefa(this)">Excluir</button>
+      `;
+
+      ul.appendChild(li);
+      input.value = "";
+    }
+
+    function toggleConcluida(checkbox) {
+      const span = checkbox.nextElementSibling;
+      if (checkbox.checked) {
+        span.classList.add("concluida");
+      } else {
+        span.classList.remove("concluida");
+      }
+    }
+
+    function editarTarefa(botao) {
+      const span = botao.previousElementSibling;
+      const novoTexto = prompt("Edite a tarefa:", span.textContent);
+      if (novoTexto !== null && novoTexto.trim() !== "") {
+        span.textContent = novoTexto.trim();
+      }
+    }
+
+    function removerTarefa(botao) {
+      const li = botao.parentElement;
+      li.remove();
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>EX06</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav">
+      <a href="#contact">Contato</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <h1 class="site-title">Contato & FAQ</h1>
+    <p class="site-sub">Formulário de contato e perguntas frequentes em uma única página.</p>
+  </header>
+
+  <main class="container">
+
+    <section id="contact" class="contact-section" aria-label="Formulário de contato">
+      <h2>Contato</h2>
+      <p>Use o formulário abaixo para enviar uma mensagem. (Envio simulado.)</p>
+
+      <form id="contactForm" class="contact-form" action="#" method="post" novalidate>
+        <label for="name">Nome</label>
+        <input id="name" name="name" type="text" required placeholder="Seu nome completo">
+
+        <label for="email">E-mail</label>
+        <input id="email" name="email" type="email" required placeholder="seu@exemplo.com">
+
+        <label for="subject">Assunto</label>
+        <input id="subject" name="subject" type="text" placeholder="Assunto da mensagem">
+
+        <label for="message">Mensagem</label>
+        <textarea id="message" name="message" rows="6" required placeholder="Escreva sua mensagem..."></textarea>
+
+        <button type="submit">Enviar</button>
+
+        <p id="success" class="success" role="status" aria-live="polite" hidden>Mensagem enviada com sucesso! ✅</p>
+      </form>
+    </section>
+
+   
+    <section id="faq" class="faq-section" aria-label="Perguntas frequentes">
+      <h2>FAQ</h2>
+      <p>Clique em uma pergunta para ver a resposta.</p>
+
+      <div class="faq">
+        <details>
+          <summary>Como salvo os arquivos no VS Code?</summary>
+          <div class="answer">
+            <p>Crie um novo arquivo, cole o código, e salve com extensão <code>.html</code> ou <code>.css</code>. Mantenha os arquivos na mesma pasta.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>O formulário envia mensagens de verdade?</summary>
+          <div class="answer">
+            <p>Não — neste exemplo o envio é simulado via JavaScript. Para enviar de fato é necessário um backend ou serviço externo (ex.: Formspree).</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Como animar a abertura do &lt;details&gt;?</summary>
+          <div class="answer">
+            <p>Usamos CSS com <code>transition</code> em uma wrapper (.answer) para animar altura, opacidade e movimento ao abrir/fechar.</p>
+          </div>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> — Meu Site</p>
+  </footer>
+
+  <script>
+    
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+   
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const success = document.getElementById('success');
+      success.hidden = false;
+      this.reset();
+    
+      setTimeout(() => { success.hidden = true; }, 3000);
+    });
+  </script>
+</body>
+</html>

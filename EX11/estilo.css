@@ -1,0 +1,66 @@
+
+
+.mapa, .mapa ul, .mapa li {
+  list-style: none;   
+  margin: 0;
+  padding: 0;
+}
+
+
+.mapa > li {
+  position: relative;
+  margin: 10px 0;
+  padding-left: 32px;   
+  line-height: 1.3;
+}
+
+
+.mapa > li::before {
+  content: "➤";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #007BFF;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+
+.mapa li ul {
+  margin-top: 6px;
+  margin-bottom: 6px;
+  padding-left: 0; 
+}
+
+
+.mapa li ul li {
+  position: relative;
+  margin: 6px 0;
+  padding-left: 20px; 
+  line-height: 1.2;
+}
+
+
+.mapa li ul li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #555;
+  font-size: 12px;
+  line-height: 1;
+}
+
+
+.mapa li > ul {
+  margin-left: 6px;
+}
+
+
+@media (max-width: 420px) {
+  .mapa > li { padding-left: 28px; }
+  .mapa > li::before { font-size: 14px; left: 0; }
+  .mapa li ul li { padding-left: 16px; }
+}

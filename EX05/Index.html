@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>O melhor blog do planeta</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+  
+  <header class="site-header">
+    <nav class="nav">
+      <a href="#posts">Posts</a>
+      <a href="#contact">Contato</a>
+    </nav>
+    <h1 class="site-title">Blogster</h1>
+    <p class="site-sub">Tudo sobre CSS(ou quase tudo).</p>
+  </header>
+
+  <main class="container">
+
+    
+    <section id="posts" class="posts-section" aria-label="Lista de postagens">
+      <h2>Últimas postagens</h2>
+
+      
+      <ul class="posts">
+        <li class="post">
+          <h3 class="post-title">Aprendendo HTML e CSS — Primeiros passos</h3>
+          <time class="post-date" datetime="2025-08-01">01 de agosto de 2025</time>
+          <p class="post-summary">
+            Um resumo das primeiras horas estudando HTML e CSS: estrutura, tags semânticas e separação de arquivos.
+          </p>
+          <a class="read-more" href="#" aria-label="Ler mais sobre Aprendendo HTML e CSS">Ler mais →</a>
+        </li>
+
+        <li class="post">
+          <h3 class="post-title">Perfil com imagem e border-radius</h3>
+          <time class="post-date" datetime="2025-08-15">15 de agosto de 2025</time>
+          <p class="post-summary">
+            Como usar a tag &lt;img&gt; com border-radius para criar fotos de perfil redondas e acessíveis.
+          </p>
+          <a class="read-more" href="#" aria-label="Ler mais sobre Perfil com imagem">Ler mais →</a>
+        </li>
+
+        <li class="post">
+          <h3 class="post-title">CSS Grid: montando um portfólio</h3>
+          <time class="post-date" datetime="2025-09-05">05 de setembro de 2025</time>
+          <p class="post-summary">
+            Exemplo prático de CSS Grid para organizar imagens em grade responsiva para um portfólio.
+          </p>
+          <a class="read-more" href="#" aria-label="Ler mais sobre CSS Grid">Ler mais →</a>
+        </li>
+      </ul>
+    </section>
+
+    
+    <section id="contact" class="contact-section" aria-label="Formulário de contato">
+      <h2>Contato</h2>
+
+      <form class="contact-form" action="#" method="post" novalidate>
+        <label for="name">Nome</label>
+        <input id="name" name="name" type="text" required placeholder="Seu nome completo">
+
+        <label for="email">E-mail</label>
+        <input id="email" name="email" type="email" required placeholder="seu@exemplo.com">
+
+        <label for="subject">Assunto</label>
+        <input id="subject" name="subject" type="text" placeholder="Sobre o que é?">
+
+        <label for="message">Mensagem</label>
+        <textarea id="message" name="message" rows="6" required placeholder="Escreva sua mensagem..."></textarea>
+
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> — Meu Blog</p>
+  </footer>
+
+  <script>
+   
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

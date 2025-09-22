@@ -1,0 +1,36 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 100px;
+  background: #f0f0f0;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 100px;
+  margin-top: 100px;
+}
+
+.item img {
+  width: 650px;
+  height: 400px;
+  object-position: 0px; 
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 80px;
+  background: #fff;
+}
+
+ul {
+  list-style: square;
+  padding-left: 2%;
+}
+
+li {
+  margin: 10px 0;
+}
